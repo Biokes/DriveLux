@@ -2,9 +2,9 @@
 
 import {defineComponent} from "vue";
 import ReusableButton from "@/components/commons/buttonComponent.vue";
-
+import TopPicks from "@/components/layouts/topPicks.vue";
 export default defineComponent({
-  components: {ReusableButton}
+  components: {ReusableButton, TopPicks}
 })
 </script>
 <template>
@@ -37,4 +37,5 @@ export default defineComponent({
       Reserve Now
     </button>
   </div>
+  <TopPicks/>
 </template>
