@@ -1,6 +1,6 @@
 <script>
-  import NavbarComponent from '../commons/navbar.vue'
-  import HeroComponent from "../layouts/heroComponent.vue";
+  import NavbarComponent from '@/components/commons/navbar.vue'
+  import HeroComponent from "@/components/layouts/heroComponent.vue";
 
   export default {
     name:'HomePage',

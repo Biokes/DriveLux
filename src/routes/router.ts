@@ -6,6 +6,18 @@ const routes = [
         path: '/',
         name: 'Home',
         component: HomePage,
+    }, {
+        path: '/getRide',
+        name: 'getRide',
+        component: HomePage,
+    }, {
+        path: '/about',
+        name: 'About',
+        component: HomePage,
+    },{
+        path: '/contact',
+        name: 'Contact',
+        component: HomePage,
     },
 ];
 

@@ -9,5 +9,4 @@ import HomePage from "@/components/views/homepage.vue";
 </template>
 
 <style scoped>
-
 </style>

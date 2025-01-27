@@ -1,19 +1,26 @@
 <script>
 export default {
-  name:'NavbarComponent',
-  data(){
+  data() {
     return {
-      links:[
-          {labels: 'Home', path: "/"},
-          {labels:'get a ride', path: '/getRide'},
-          {labels:'about', path: '/about'},
-          {labels:'contact', path: '/contact'}
-      ]
-  }
-  }
+      links: [
+        {labels: 'Home', path: "/"},
+        {labels:'get a ride', path: '/getRide'},
+        {labels:'about', path: '/about'},
+        {labels:'contact', path: '/contact'}
+      ],
+      counter: 0,
+    };
+  },
+  methods: {
+    setActive(index) {
+      this.counter = index;
+    },
+  },
 }
 </script>
 <script setup>
+import ReusableButton from "@/components/commons/buttonComponent.vue";
+
 const counter = defineProps({
   index: {type:String,required:true}
 })
@@ -25,14 +32,15 @@ const counter = defineProps({
     </div>
     <div>
         <router-link
-            v-for="(link, index) in links" :key="index" :to="link.path"
-            :class="{'text-[#2CB9AD] font-bold': counter === `${index}`, 'text-gray-800': counter.index !== `${index}`}" class="text-lg font-medium hover:text-[#2CB9AD] transition-colors"
+            v-for="(link, index) in links" :key="index" :to="link.path" @click="setActive(index)"
+            :class="{'text-[#2CB9AD] font-bold': counter ===index, 'text-gray-800': counter.index !== index }" class="text-lg font-medium hover:text-[#2CB9AD] transition-colors"
         >
-            {{links.label}}
+            {{links.labels}}
         </router-link>
-      <button>
-        reserve now
-      </button>
+
+    </div>
+    <div class="flex ">
+      <ReusableButton link="/reserve" text="reserve now"/>
     </div>
   </main>
 </template>
