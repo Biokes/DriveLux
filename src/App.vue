@@ -3,7 +3,9 @@ import HomePage from "@/components/views/homepage.vue";
 </script>
 
 <template>
-  <HomePage/>
+  <div id="#app">
+    <HomePage/>
+  </div>
 </template>
 
 <style scoped>
